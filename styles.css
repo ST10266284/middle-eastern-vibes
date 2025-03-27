@@ -43,7 +43,6 @@ header p {
     overflow: hidden;
 }
 
-/* New Pattern Overlay */
 .section::before {
     content: '';
     position: absolute;
@@ -57,7 +56,6 @@ header p {
     pointer-events: none;
 }
 
-/* Pulsing Border */
 .section::after {
     content: '';
     position: absolute;
@@ -91,7 +89,6 @@ header p {
     gap: 2.5rem;
     position: relative;
     z-index: 1;
-    /* Ensures content stays above pattern */
 }
 
 .text {
@@ -122,29 +119,29 @@ header p {
     transform: scale(1.1) rotate(2deg);
 }
 
-/* Image Rules */
+/* Image Rules with Relative Paths */
 #history-image {
-    background-image: url('assets/history.jpg');
+    background-image: url('./assets/history.jpg');
 }
 
 #culture-image {
-    background-image: url('assets/culture.jpg');
+    background-image: url('./assets/culture.jpg');
 }
 
 #religion-image {
-    background-image: url('assets/religion.jpg');
+    background-image: url('./assets/religion.jpg');
 }
 
 #cuisine-image {
-    background-image: url('assets/cuisine.jpg');
+    background-image: url('./assets/cuisine.jpg');
 }
 
 #architecture-image {
-    background-image: url('assets/architecture.jpg');
+    background-image: url('./assets/architecture.jpg');
 }
 
 #demographics-image {
-    background-image: url('assets/demographics.jpg');
+    background-image: url('./assets/demographics.jpg');
 }
 
 footer {
@@ -157,7 +154,6 @@ footer {
     z-index: 1;
 }
 
-/* New Animations */
 @keyframes rotatePattern {
     0% {
         transform: rotate(0deg);
@@ -185,7 +181,6 @@ footer {
     }
 }
 
-/* Existing Animations */
 @keyframes slideIn {
     from {
         transform: translateY(-100%);
