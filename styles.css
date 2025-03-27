@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a0f0b;
+    color: #f5e8c7;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(45deg, #8b0000, #d4a017);
+    padding: 3rem;
+    text-align: center;
+    border-bottom: 8px solid #2f4f4f;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #f5e8c7;
+    text-shadow: 3px 3px 6px #000;
+    animation: slideIn 1.5s ease-out;
+}
+
+header p {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+.section {
+    padding: 4rem 3rem;
+    background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(212, 160, 23, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* New Pattern Overlay */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    opacity: 0.1;
+    animation: rotatePattern 20s linear infinite;
+    pointer-events: none;
+}
+
+/* Pulsing Border */
+.section::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(212, 160, 23, 0.5);
+    border-radius: 18px;
+    animation: pulseBorder 3s ease-in-out infinite;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.section h2 {
+    font-size: 2.8rem;
+    color: #d4a017;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: bounceIn 1s ease;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+    /* Ensures content stays above pattern */
+}
+
+.text {
+    flex: 1;
+    font-size: 1.2rem;
+}
+
+.text strong {
+    color: #d4a017;
+}
+
+.image {
+    flex: 1;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.image.visible {
+    opacity: 1;
+    animation: zoomIn 1s ease;
+}
+
+.image:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Image Rules */
+#history-image {
+    background-image: url('assets/history.jpg');
+}
+
+#culture-image {
+    background-image: url('assets/culture.jpg');
+}
+
+#religion-image {
+    background-image: url('assets/religion.jpg');
+}
+
+#cuisine-image {
+    background-image: url('assets/cuisine.jpg');
+}
+
+#architecture-image {
+    background-image: url('assets/architecture.jpg');
+}
+
+#demographics-image {
+    background-image: url('assets/demographics.jpg');
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #2f4f4f;
+    color: #f5e8c7;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* New Animations */
+@keyframes rotatePattern {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseBorder {
+    0% {
+        border-color: rgba(212, 160, 23, 0.5);
+        transform: scale(1);
+    }
+
+    50% {
+        border-color: rgba(212, 160, 23, 0.8);
+        transform: scale(1.02);
+    }
+
+    100% {
+        border-color: rgba(212, 160, 23, 0.5);
+        transform: scale(1);
+    }
+}
+
+/* Existing Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .image {
+        width: 100%;
+        height: 300px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+}
