@@ -89,6 +89,8 @@ header p {
     gap: 2.5rem;
     position: relative;
     z-index: 1;
+    padding: 1rem 0;
+    /* Extra space for mobile stacking */
 }
 
 .text {
@@ -119,29 +121,29 @@ header p {
     transform: scale(1.1) rotate(2deg);
 }
 
-/* Image Rules with Relative Paths */
+/* Image Rules with Root-Relative Paths */
 #history-image {
-    background-image: url('./assets/history.jpg');
+    background-image: url('/assets/history.jpg');
 }
 
 #culture-image {
-    background-image: url('./assets/culture.jpg');
+    background-image: url('/assets/culture.jpg');
 }
 
 #religion-image {
-    background-image: url('./assets/religion.jpg');
+    background-image: url('/assets/religion.jpg');
 }
 
 #cuisine-image {
-    background-image: url('./assets/cuisine.jpg');
+    background-image: url('/assets/cuisine.jpg');
 }
 
 #architecture-image {
-    background-image: url('./assets/architecture.jpg');
+    background-image: url('/assets/architecture.jpg');
 }
 
 #demographics-image {
-    background-image: url('./assets/demographics.jpg');
+    background-image: url('/assets/demographics.jpg');
 }
 
 footer {
@@ -225,21 +227,26 @@ footer {
     .content {
         flex-direction: column;
         align-items: stretch;
-        /* Ensures full width */
+        min-height: 600px;
+        /* Ensure enough room for text and image */
+        padding: 2rem 0;
+        /* More breathing room */
     }
 
     .text {
         width: 100%;
-        /* Full width for text */
-        margin-bottom: 1.5rem;
-        /* Space between text and image */
+        margin-bottom: 2rem;
+        /* Bigger gap before image */
+        font-size: 1rem;
+        /* Slightly smaller text to fit better */
     }
 
     .image {
         width: 100%;
-        height: 300px;
+        height: 350px;
+        /* Bigger height for visibility */
         opacity: 1;
-        /* Force visibility on mobile */
+        /* Force show on mobile */
     }
 
     header h1 {
