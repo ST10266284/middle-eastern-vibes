@@ -90,7 +90,6 @@ header p {
     position: relative;
     z-index: 1;
     padding: 1rem 0;
-    /* Extra space for mobile stacking */
 }
 
 .text {
@@ -227,26 +226,23 @@ footer {
     .content {
         flex-direction: column;
         align-items: stretch;
-        min-height: 600px;
-        /* Ensure enough room for text and image */
+        min-height: 700px;
+        /* More room for text and full-size images */
         padding: 2rem 0;
-        /* More breathing room */
     }
 
     .text {
         width: 100%;
         margin-bottom: 2rem;
-        /* Bigger gap before image */
-        font-size: 1rem;
-        /* Slightly smaller text to fit better */
+        font-size: 0.9rem;
+        /* Smaller text for more image space */
     }
 
     .image {
         width: 100%;
-        height: 350px;
-        /* Bigger height for visibility */
+        height: 400px;
+        /* Full size like desktop */
         opacity: 1;
-        /* Force show on mobile */
     }
 
     header h1 {
